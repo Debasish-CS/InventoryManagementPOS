@@ -1,4 +1,5 @@
 # InventoryManagementPOS
+##Created By : Myself, Anustup Ganguly & Neha Ray
 ##A Point Of Sale Desktop Application to manage the Inventory System of a Company designed using C# .Net and Microsoft SQL Database.
 Design and development of an Inventory Management system. 
 1. This application will include sound details of retail Point of Sale Application Software, Barcode 
