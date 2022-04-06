@@ -17,24 +17,28 @@ namespace inventory_management
             InitializeComponent();
         }
 
+       
+
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            label10.Text = LoginForm.Userlvl;
+            userLvlLabel.Text = LoginForm.userLvl;
         }
 
         private void guna2PictureBox6_Click(object sender, EventArgs e)
         {
-            System.Threading.Thread.Sleep(500);
-            Category cw = new Category();
-            cw.Show();
-            this.Hide();
+            
+           
+                Category cw = new Category();
+                cw.Show();
+                this.Hide();
+            
         }
 
         private void guna2PictureBox5_Click(object sender, EventArgs e)
         {
-            if(LoginForm.Userlvl == "guest")
+            if (userLvlLabel.Text == "guest")
             {
-                MessageBox.Show("You are not authorise to access this option");
+                MessageBox.Show("You are not authorised to Access this Option!");
             }
             else
             {
@@ -46,44 +50,48 @@ namespace inventory_management
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
-            if (LoginForm.Userlvl == "guest")
+           if( userLvlLabel.Text == "guest")
             {
-                MessageBox.Show("You are not authorise to access this option");
+                MessageBox.Show("You are not authorised to Access this Option!");
             }
             else
             {
-                ManageUser cw = new ManageUser();
-                cw.Show();
+                ManageUser mu = new ManageUser();
+                mu.Show();
                 this.Hide();
             }
         }
 
         private void guna2PictureBox3_Click(object sender, EventArgs e)
         {
-            Product cw = new Product();
-            cw.Show();
-            this.Hide();
+           
+                Product cw = new Product();
+                cw.Show();
+                this.Hide();
+            
+           
         }
 
         private void guna2PictureBox4_Click(object sender, EventArgs e)
         {
-            if (LoginForm.Userlvl == "guest")
+            if (userLvlLabel.Text == "guest")
             {
-                MessageBox.Show("You are not authorise to access this option");
+                MessageBox.Show("You are not authorised to Access this Option!");
             }
             else
             {
                 Order cw = new Order();
-                cw.Show();
+                cw.Visible = true;
                 this.Hide();
             }
+            
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
-            if (LoginForm.Userlvl == "guest")
+            if (userLvlLabel.Text == "guest")
             {
-                MessageBox.Show("You are not authorise to access this option");
+                MessageBox.Show("You are not authorised to Access this Option!");
             }
             else
             {
@@ -91,20 +99,23 @@ namespace inventory_management
                 cw.Show();
                 this.Hide();
             }
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Category cw = new Category();
-            cw.Show();
-            this.Hide();
+            
+                Category cw = new Category();
+                cw.Show();
+                this.Hide();
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            if (LoginForm.Userlvl == "guest")
+            if (userLvlLabel.Text == "guest")
             {
-                MessageBox.Show("You are not authorise to access this option");
+                MessageBox.Show("You are not authorised to Access this Option!");
             }
             else
             {
@@ -116,44 +127,46 @@ namespace inventory_management
 
         private void label5_Click(object sender, EventArgs e)
         {
-            if (LoginForm.Userlvl == "guest")
+            if (userLvlLabel.Text == "staff" || userLvlLabel.Text == "guest")
             {
-                MessageBox.Show("You are not authorise to access this option");
+                MessageBox.Show("You are not authorised to Access this Option!");
             }
             else
             {
-                ManageUser cw = new ManageUser();
-                cw.Show();
+                ManageUser mu = new ManageUser();
+                mu.Show();
                 this.Hide();
             }
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-            Product cw = new Product();
-            cw.Show();
-            this.Hide();
+           
+                Product cw = new Product();
+                cw.Show();
+                this.Hide();
+            
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
-            if (LoginForm.Userlvl == "guest")
+            if (userLvlLabel.Text == "guest")
             {
-                MessageBox.Show("You are not authorise to access this option");
+                MessageBox.Show("You are not authorised to Access this Option!");
             }
             else
             {
                 Order cw = new Order();
-                cw.Show();
+                cw.Visible = true;
                 this.Hide();
             }
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
-            if (LoginForm.Userlvl == "guest")
+            if (userLvlLabel.Text == "guest")
             {
-                MessageBox.Show("You are not authorise to access this option");
+                MessageBox.Show("You are not authorised to Access this Option!");
             }
             else
             {
@@ -173,21 +186,6 @@ namespace inventory_management
             LoginForm lg = new LoginForm();
             lg.Show();
             this.Hide();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

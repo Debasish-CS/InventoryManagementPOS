@@ -31,10 +31,10 @@ namespace inventory_management
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.UserlevelTb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.userlevelCb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.PaswordTb = new Guna.UI2.WinForms.Guna2TextBox();
             this.usernameTb = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.LoginBtn = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -54,13 +54,12 @@ namespace inventory_management
             // 
             // panel1
             // 
-            this.panel1.AllowDrop = true;
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.UserlevelTb);
+            this.panel1.Controls.Add(this.userlevelCb);
             this.panel1.Controls.Add(this.PaswordTb);
             this.panel1.Controls.Add(this.usernameTb);
-            this.panel1.Controls.Add(this.guna2Button1);
+            this.panel1.Controls.Add(this.LoginBtn);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.linkLabel2);
@@ -72,37 +71,36 @@ namespace inventory_management
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(288, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(341, 512);
+            this.panel1.Size = new System.Drawing.Size(341, 521);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // UserlevelTb
+            // userlevelCb
             // 
-            this.UserlevelTb.AllowDrop = true;
-            this.UserlevelTb.AutoRoundedCorners = true;
-            this.UserlevelTb.BackColor = System.Drawing.Color.Transparent;
-            this.UserlevelTb.BorderRadius = 17;
-            this.UserlevelTb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.UserlevelTb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.UserlevelTb.FillColor = System.Drawing.Color.DarkCyan;
-            this.UserlevelTb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.UserlevelTb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.UserlevelTb.FocusedState.Parent = this.UserlevelTb;
-            this.UserlevelTb.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
-            this.UserlevelTb.ForeColor = System.Drawing.Color.White;
-            this.UserlevelTb.HoverState.Parent = this.UserlevelTb;
-            this.UserlevelTb.ItemHeight = 30;
-            this.UserlevelTb.Items.AddRange(new object[] {
+            this.userlevelCb.AutoRoundedCorners = true;
+            this.userlevelCb.BackColor = System.Drawing.Color.Transparent;
+            this.userlevelCb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.userlevelCb.BorderRadius = 17;
+            this.userlevelCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.userlevelCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.userlevelCb.FillColor = System.Drawing.Color.DarkCyan;
+            this.userlevelCb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.userlevelCb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.userlevelCb.FocusedState.Parent = this.userlevelCb;
+            this.userlevelCb.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
+            this.userlevelCb.ForeColor = System.Drawing.Color.White;
+            this.userlevelCb.HoverState.Parent = this.userlevelCb;
+            this.userlevelCb.ItemHeight = 30;
+            this.userlevelCb.Items.AddRange(new object[] {
             "admin",
             "staff"});
-            this.UserlevelTb.ItemsAppearance.Parent = this.UserlevelTb;
-            this.UserlevelTb.Location = new System.Drawing.Point(16, 300);
-            this.UserlevelTb.Name = "UserlevelTb";
-            this.UserlevelTb.ShadowDecoration.Parent = this.UserlevelTb;
-            this.UserlevelTb.Size = new System.Drawing.Size(140, 36);
-            this.UserlevelTb.StartIndex = 0;
-            this.UserlevelTb.TabIndex = 53;
-            this.UserlevelTb.SelectedIndexChanged += new System.EventHandler(this.UserlevelTb_SelectedIndexChanged);
+            this.userlevelCb.ItemsAppearance.Parent = this.userlevelCb;
+            this.userlevelCb.Location = new System.Drawing.Point(32, 300);
+            this.userlevelCb.Name = "userlevelCb";
+            this.userlevelCb.ShadowDecoration.Parent = this.userlevelCb;
+            this.userlevelCb.Size = new System.Drawing.Size(140, 36);
+            this.userlevelCb.StartIndex = 0;
+            this.userlevelCb.TabIndex = 53;
             // 
             // PaswordTb
             // 
@@ -118,8 +116,8 @@ namespace inventory_management
             this.PaswordTb.FillColor = System.Drawing.Color.DarkCyan;
             this.PaswordTb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PaswordTb.FocusedState.Parent = this.PaswordTb;
-            this.PaswordTb.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
-            this.PaswordTb.ForeColor = System.Drawing.Color.White;
+            this.PaswordTb.Font = new System.Drawing.Font("Californian FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaswordTb.ForeColor = System.Drawing.Color.Turquoise;
             this.PaswordTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PaswordTb.HoverState.Parent = this.PaswordTb;
             this.PaswordTb.Location = new System.Drawing.Point(73, 246);
@@ -133,11 +131,9 @@ namespace inventory_management
             this.PaswordTb.Size = new System.Drawing.Size(261, 43);
             this.PaswordTb.TabIndex = 52;
             this.PaswordTb.UseSystemPasswordChar = true;
-            this.PaswordTb.TextChanged += new System.EventHandler(this.PaswordTb_TextChanged);
             // 
             // usernameTb
             // 
-            this.usernameTb.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.usernameTb.BorderThickness = 0;
             this.usernameTb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.usernameTb.DefaultText = "";
@@ -149,8 +145,8 @@ namespace inventory_management
             this.usernameTb.FillColor = System.Drawing.Color.DarkCyan;
             this.usernameTb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.usernameTb.FocusedState.Parent = this.usernameTb;
-            this.usernameTb.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTb.ForeColor = System.Drawing.Color.White;
+            this.usernameTb.Font = new System.Drawing.Font("Californian FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTb.ForeColor = System.Drawing.Color.Turquoise;
             this.usernameTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.usernameTb.HoverState.Parent = this.usernameTb;
             this.usernameTb.Location = new System.Drawing.Point(73, 190);
@@ -165,31 +161,28 @@ namespace inventory_management
             this.usernameTb.TabIndex = 51;
             this.usernameTb.TextChanged += new System.EventHandler(this.usernameTb_TextChanged);
             // 
-            // guna2Button1
+            // LoginBtn
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderColor = System.Drawing.Color.LimeGreen;
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Honeydew;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Teal;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(38, 388);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(278, 37);
-            this.guna2Button1.TabIndex = 50;
-            this.guna2Button1.Text = "LOGIN";
-            this.guna2Button1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.guna2Button1.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.LoginBtn.BorderColor = System.Drawing.Color.LimeGreen;
+            this.LoginBtn.BorderRadius = 20;
+            this.LoginBtn.CheckedState.Parent = this.LoginBtn;
+            this.LoginBtn.CustomImages.Parent = this.LoginBtn;
+            this.LoginBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LoginBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LoginBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LoginBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LoginBtn.DisabledState.Parent = this.LoginBtn;
+            this.LoginBtn.FillColor = System.Drawing.Color.Honeydew;
+            this.LoginBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.LoginBtn.ForeColor = System.Drawing.Color.Teal;
+            this.LoginBtn.HoverState.Parent = this.LoginBtn;
+            this.LoginBtn.Location = new System.Drawing.Point(32, 404);
+            this.LoginBtn.Name = "LoginBtn";
+            this.LoginBtn.ShadowDecoration.Parent = this.LoginBtn;
+            this.LoginBtn.Size = new System.Drawing.Size(278, 37);
+            this.LoginBtn.TabIndex = 50;
+            this.LoginBtn.Text = "LOGIN";
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // label3
             // 
@@ -201,14 +194,13 @@ namespace inventory_management
             this.label3.Size = new System.Drawing.Size(118, 38);
             this.label3.TabIndex = 11;
             this.label3.Text = "Log in";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.checkBox1.Location = new System.Drawing.Point(176, 344);
+            this.checkBox1.Location = new System.Drawing.Point(176, 366);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(158, 22);
             this.checkBox1.TabIndex = 10;
@@ -223,7 +215,7 @@ namespace inventory_management
             this.linkLabel2.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.ForeColor = System.Drawing.Color.White;
             this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.linkLabel2.Location = new System.Drawing.Point(48, 344);
+            this.linkLabel2.Location = new System.Drawing.Point(42, 370);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(53, 18);
             this.linkLabel2.TabIndex = 9;
@@ -237,7 +229,7 @@ namespace inventory_management
             this.pictureBox3.Location = new System.Drawing.Point(16, 244);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(49, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
@@ -247,7 +239,7 @@ namespace inventory_management
             this.pictureBox2.Location = new System.Drawing.Point(16, 192);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(49, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
@@ -273,11 +265,12 @@ namespace inventory_management
             // 
             // linkLabel1
             // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Crimson;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.ForeColor = System.Drawing.Color.Black;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(85, 447);
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkSlateBlue;
+            this.linkLabel1.Location = new System.Drawing.Point(88, 462);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(160, 18);
             this.linkLabel1.TabIndex = 3;
@@ -291,7 +284,7 @@ namespace inventory_management
             this.pictureBox1.Location = new System.Drawing.Point(116, 65);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(94, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -321,7 +314,7 @@ namespace inventory_management
             // 
             // LoginForm
             // 
-            this.AcceptButton = this.guna2Button1;
+            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -359,10 +352,10 @@ namespace inventory_management
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button LoginBtn;
         private Guna.UI2.WinForms.Guna2TextBox PaswordTb;
         private Guna.UI2.WinForms.Guna2TextBox usernameTb;
-        private Guna.UI2.WinForms.Guna2ComboBox UserlevelTb;
+        private Guna.UI2.WinForms.Guna2ComboBox userlevelCb;
     }
 }
 

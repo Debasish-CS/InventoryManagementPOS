@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
 namespace inventory_management
 {
     public partial class LoginForm : Form
@@ -16,9 +17,12 @@ namespace inventory_management
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\DEBASISH\Documents\Inventory_Manage_user.mdf;Integrated Security=True;Connect Timeout=30");
-        public static string Userlvl = "";
-        public static string Username = "";
+
+        public static string userLvl = "";
+        public static string userName = "";
+
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ARS\Documents\inventorytb.mdf;Integrated Security=True;Connect Timeout=30");
+
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -31,9 +35,10 @@ namespace inventory_management
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Userlvl = "guest";
-            Dashboard dash = new Dashboard();
-            dash.Show();
+            userLvl = "guest";
+            
+            Dashboard d = new Dashboard();
+            d.Show();
             this.Hide();
         }
 
@@ -51,7 +56,7 @@ namespace inventory_management
             {
                 PaswordTb.UseSystemPasswordChar = false;
             }
-            else
+            else if(checkBox1.Checked == false)
             {
                 PaswordTb.UseSystemPasswordChar = true;
             }
@@ -78,44 +83,38 @@ namespace inventory_management
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void LoginBtn_Click(object sender, EventArgs e)
         {
-            Userlvl = UserlevelTb.SelectedItem.ToString();
-            Username = usernameTb.Text;
-            con.Open();
-            string pass = PaswordTb.Text;
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) from UserTbl where username ='" + usernameTb.Text + "' and password = '" + (pass.GetHashCode()).GetHashCode() + "' and userlevel='"+UserlevelTb.SelectedItem.ToString()+"'", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if(dt.Rows[0][0].ToString() == "1")
-            {
-                Dashboard dash = new Dashboard();
-                dash.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Wrong UserName Or Password");
-            }
-            con.Close();
-        }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
+            userLvl = userlevelCb.SelectedItem.ToString();
+            userName = usernameTb.Text;
+            try
+            {
+                con.Open();
+                string pass = PaswordTb.Text;
+                SqlDataAdapter Sda = new SqlDataAdapter("Select Count(*) from UserTbl where username='" + usernameTb.Text + "' and password='" + (pass.GetHashCode()).GetHashCode() + "' and userlevel='" + userlevelCb.SelectedItem.ToString() + "'", con);
+                DataTable dt = new DataTable();
+                Sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    Dashboard d = new Dashboard();
+                    d.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Username or Password or Userlevel!");
+                }
+                con.Close();
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.Message);
+            }
 
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PaswordTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserlevelTb_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
